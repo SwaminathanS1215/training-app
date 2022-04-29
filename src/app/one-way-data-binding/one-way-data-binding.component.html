@@ -1,0 +1,22 @@
+<div class="card m-4" id="profile-card">
+    <div class="row g-0">
+        <div class="col-md-4" id="img-block">
+            <fa-icon [icon]="icons.userCircle" class="fa-10x" id="profile-icon"></fa-icon>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <div class="d-flex align-items-center">
+                    <fa-icon [icon]="icons.locationDot" class="fa-1x text-blue me-2"></fa-icon>
+                    <p class="card-text">{{location}}</p>
+                </div>
+                <div class="d-flex flex-wrap align-items-cneter mt-2">
+                    <!-- iterate to display the array of skills -->
+                    <div class="each-skill" *ngFor="let skill of technicalSkills">
+                        <span class="badge bg-primary">{{skill}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

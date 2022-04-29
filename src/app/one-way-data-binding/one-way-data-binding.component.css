@@ -1,0 +1,20 @@
+#profile-card {
+    width: 50rem;
+    border: none;
+    box-shadow: 0 0 0.3rem 0;
+}
+
+#img-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #3f51b5, #03a9f4);
+}
+
+#profile-icon {
+    color: white;
+}
+
+.each-skill {
+    margin-right: 0.5rem;
+}
