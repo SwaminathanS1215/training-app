@@ -1,0 +1,42 @@
+<div>
+    <div class="card mb-3 m-5 shadow-lg">
+        <h3 class="text-light text-center m-0 p-2">Dynamic Styles</h3>
+        <div class="row g-0 h-100 p-5">
+            <div class="col-md-6">
+                <img src="../../assets/images/login-bg.jpg" class="img-fluid" alt="Dynamic styles image" 
+                [ngClass]="{
+                    'img-regular': imageStyle === 'img-regular', 
+                    'img-thumbnail': imageStyle === 'img-thumbnail', 
+                    'img-border-radius': imageStyle === 'img-border-radius', 
+                    'img-round': imageStyle === 'img-round'
+                }">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body d-flex align-items-center justify-content-center h-100">
+                    <div id="filter-tab">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="img-regular" [(ngModel)]="imageStyle">
+                            <label class="form-check-label" for="inlineRadio1">Regular</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="img-thumbnail" [(ngModel)]="imageStyle">
+                            <label class="form-check-label" for="inlineRadio2">Thumbnail</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                value="img-border-radius" [(ngModel)]="imageStyle">
+                            <label class="form-check-label" for="inlineRadio3">Border-radius</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                                value="img-round" [(ngModel)]="imageStyle">
+                            <label class="form-check-label" for="inlineRadio4">Rounded</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

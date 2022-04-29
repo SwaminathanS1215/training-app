@@ -11,6 +11,7 @@ import { LoginValidationComponent } from './login-validation/login-validation.co
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { RegisterValidationComponent } from './register-validation/register-validation.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
+import { NgStyleImagesComponent } from './ng-style-images/ng-style-images.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ParentChildComponent } from './parent-child/parent-child.component';
     NgClassComponent,
     RegisterValidationComponent,
     ParentChildComponent,
+    NgStyleImagesComponent,
   ],
   imports: [
     BrowserModule,

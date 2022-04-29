@@ -1,0 +1,26 @@
+.card {
+    background: linear-gradient(45deg, #4caf50, #009688);
+    width: 75rem;
+    height: 32rem;
+}
+
+.card img {
+    width: 26rem;
+    height: 24rem !important;
+}
+
+.img-border-radius {
+    border-radius: 1rem !important;
+}
+
+.img-round {
+    border-radius: 50% !important;
+}
+
+.img-thumbnail {
+    border: 0.7rem solid #3f51b5;
+}
+
+.img-regular {
+    border-radius: 0 !important;
+}

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-button, input, input:focus, button:focus {
+button.btn, input[type="text"], input[type="text"]:focus, button.btn:focus {
     border-radius: 0 !important;
 }
