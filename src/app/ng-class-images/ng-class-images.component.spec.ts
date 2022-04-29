@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgStyleImagesComponent } from './ng-style-images.component';
+import { NgClassImagesComponent } from './ng-class-images.component';
 
-describe('NgStyleImagesComponent', () => {
-  let component: NgStyleImagesComponent;
-  let fixture: ComponentFixture<NgStyleImagesComponent>;
+describe('NgClassImagesComponent', () => {
+  let component: NgClassImagesComponent;
+  let fixture: ComponentFixture<NgClassImagesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgStyleImagesComponent ]
+      declarations: [ NgClassImagesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgStyleImagesComponent);
+    fixture = TestBed.createComponent(NgClassImagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
