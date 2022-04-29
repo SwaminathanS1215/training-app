@@ -10,6 +10,7 @@ import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-
 import { LoginValidationComponent } from './login-validation/login-validation.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { RegisterValidationComponent } from './register-validation/register-validation.component';
+import { ParentChildComponent } from './parent-child/parent-child.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RegisterValidationComponent } from './register-validation/register-vali
     LoginValidationComponent,
     NgClassComponent,
     RegisterValidationComponent,
+    ParentChildComponent,
   ],
   imports: [
     BrowserModule,

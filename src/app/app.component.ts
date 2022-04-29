@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'training-app';
+  userName: string;
+
+  constructor() {
+    this.userName = '';
+  }
 }
