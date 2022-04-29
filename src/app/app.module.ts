@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
 import { LoginValidationComponent } from './login-validation/login-validation.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
+import { RegisterValidationComponent } from './register-validation/register-validation.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgClassComponent } from './ng-class/ng-class.component';
     TwoWayDataBindingComponent,
     LoginValidationComponent,
     NgClassComponent,
+    RegisterValidationComponent,
   ],
   imports: [
     BrowserModule,
