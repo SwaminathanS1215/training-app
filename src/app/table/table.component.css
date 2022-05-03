@@ -1,0 +1,26 @@
+.table-container {
+    height: 100vh;
+    background-image: linear-gradient(155deg, #673ab7 50%, #4863fb 50%);
+    display: flex;
+}
+
+#table-wrapper {
+    width: 90%;
+    margin: auto;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 0 0.5rem 0 #000000;
+    height: fit-content;
+}
+
+thead {
+    background: black;
+}
+
+th, td {
+    padding: 1rem;
+}
+
+.icons {
+    cursor: pointer;
+}

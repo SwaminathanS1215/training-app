@@ -1,0 +1,29 @@
+<div class="table-container">
+    <div id="table-wrapper">
+        <table id="user-table" class="table table-dark table-striped m-0">
+            <thead>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userData">
+                    <td>{{user.userName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.name}}</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div id="edit-icon" class="me-4">
+                                <fa-icon [icon]="icons.edit" class="fa-1x text-light icons"></fa-icon>
+                            </div>
+                            <div id="delete-icon">
+                                <fa-icon [icon]="icons.delete" class="fa-1x text-light icons"></fa-icon>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

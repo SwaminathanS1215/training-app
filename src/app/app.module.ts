@@ -14,6 +14,8 @@ import { ParentChildComponent } from './parent-child/parent-child.component';
 import { NgClassImagesComponent } from './ng-class-images/ng-class-images.component';
 import { NgStylesInputComponent } from './ng-styles-input/ng-styles-input.component';
 import { NgStylesDropdownComponent } from './ng-styles-dropdown/ng-styles-dropdown.component';
+import { TableComponent } from './table/table.component';
+import { LoginRegisterSwitchComponent } from './login-register-switch/login-register-switch.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { NgStylesDropdownComponent } from './ng-styles-dropdown/ng-styles-dropdo
     NgClassImagesComponent,
     NgStylesInputComponent,
     NgStylesDropdownComponent,
+    TableComponent,
+    LoginRegisterSwitchComponent,
   ],
   imports: [
     BrowserModule,
