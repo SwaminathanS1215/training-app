@@ -92,6 +92,9 @@ export class LoginRegisterSwitchComponent implements OnInit, userDetails {
 
     doRegister() {
         this.isRegistered = true;
+        this.form = 'login';
+        let newData: userDetails = { userName: this.userName, password: this.password, email: this.email };
+        this.userData.push(newData);
     }
 
     // function to switch between login and register form
