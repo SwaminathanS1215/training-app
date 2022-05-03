@@ -1,0 +1,77 @@
+<div class="ng-styles-container w-100">
+    <h2 class="text-light">Dynamic Style change</h2>
+    <div class="row" id="inputs-wrapper-grid">
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="flex-direction" class="form-label">Flex Direction</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    [(ngModel)]="flexDirection" name="flex-direction">
+                    <option value="row">Row</option>
+                    <option value="column">Column</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="align-items" class="form-label">Align Items</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    [(ngModel)]="alignItems" name="alignItems">
+                    <option value="start">Start</option>
+                    <option value="end">End</option>
+                    <option value="center">Center</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="justify-Content" class="form-label">Justify Content</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    [(ngModel)]="justifyContent" name="justifyContent">
+                    <option value="flex-start">Flex Start</option>
+                    <option value="end">End</option>
+                    <option value="center">Center</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="flex-Wrap" class="form-label">Flex Wrap</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    [(ngModel)]="flexWrap" name="flexWrap">
+                    <option value="wrap">Wrap</option>
+                    <option value="nowrap">No Wrap</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="border" class="form-label">Border</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    [(ngModel)]="border" name="border">
+                    <option value="2px solid gray">2px solid gray</option>
+                    <option value="5px solid blue">5px solid blue</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="border-radius" class="form-label">Border Radius</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    [(ngModel)]="borderRadius" name="borderRadius">
+                    <option value="0.5rem">0.5rem</option>
+                    <option value="1rem">1rem</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="width: fit-content;"
+        [ngStyle]="{'flex-direction': flexDirection, 'align-items': alignItems, 'justify-content': justifyContent, 'flex-wrap': flexWrap, 'border': border, 'border-radius': borderRadius}">
+        <img src="../../assets/images/login-bg.jpg" class="card-img-top" alt="..." [ngStyle]="{'width': '20rem'}">
+        <div class="card-body">
+            <h5 class="card-title">Printed Black T-shirt</h5>
+            <p class="card-text">Rs. 750.</p>
+            <a href="#" class="btn btn-primary">View</a>
+        </div>
+    </div>
+</div>

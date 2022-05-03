@@ -1,0 +1,57 @@
+<div class="ng-styles-container w-100">
+    <h2 class="text-light">Dynamic Style change</h2>
+    <div class="row" id="inputs-wrapper-grid">
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="flex-direction" class="form-label">Flex Direction</label>
+                <input class="form-control form-control-sm" type="text" placeholder="" [(ngModel)]="flexDirection"
+                    name="flex-direction" id="flex-direction">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="align-items" class="form-label">Align Items</label>
+                <input class="form-control form-control-sm" type="text" placeholder="" [(ngModel)]="alignItems"
+                    name="align-items" id="align-items">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="justify Content" class="form-label">Justify Content</label>
+                <input class="form-control form-control-sm" type="text" placeholder="" [(ngModel)]="justifyContent"
+                    name="justify Content" id="justify-Content">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="flex-Wrap" class="form-label">Flex Wrap</label>
+                <input class="form-control form-control-sm" type="text" placeholder="" [(ngModel)]="flexWrap"
+                    name="flex-Wrap" id="flex-Wrap">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="border" class="form-label">Border</label>
+                <input class="form-control form-control-sm" type="text" placeholder="" [(ngModel)]="border"
+                    name="border" id="border">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="border-radius" class="form-label">Border Radius</label>
+                <input class="form-control form-control-sm" type="text" placeholder="" [(ngModel)]="borderRadius"
+                    name="border-radius" id="border-radius">
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="width: fit-content;"
+        [ngStyle]="{'flex-direction': flexDirection, 'align-items': alignItems, 'justify-content': justifyContent, 'flex-wrap': flexWrap, 'border': border, 'border-radius': borderRadius}">
+        <img src="../../assets/images/login-bg.jpg" class="card-img-top" alt="..." [ngStyle]="{'width': '20rem'}">
+        <div class="card-body">
+            <h5 class="card-title">Printed Black T-shirt</h5>
+            <p class="card-text">Rs. 750.</p>
+            <a href="#" class="btn btn-primary">View</a>
+        </div>
+    </div>
+</div>

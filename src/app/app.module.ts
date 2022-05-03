@@ -12,6 +12,8 @@ import { NgClassComponent } from './ng-class/ng-class.component';
 import { RegisterValidationComponent } from './register-validation/register-validation.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { NgClassImagesComponent } from './ng-class-images/ng-class-images.component';
+import { NgStylesInputComponent } from './ng-styles-input/ng-styles-input.component';
+import { NgStylesDropdownComponent } from './ng-styles-dropdown/ng-styles-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { NgClassImagesComponent } from './ng-class-images/ng-class-images.compon
     RegisterValidationComponent,
     ParentChildComponent,
     NgClassImagesComponent,
+    NgStylesInputComponent,
+    NgStylesDropdownComponent,
   ],
   imports: [
     BrowserModule,
