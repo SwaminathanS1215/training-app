@@ -17,6 +17,7 @@ import { NgStylesDropdownComponent } from './ng-styles-dropdown/ng-styles-dropdo
 import { TableComponent } from './table/table.component';
 import { LoginRegisterSwitchComponent } from './login-register-switch/login-register-switch.component';
 import { HighlightDirective } from './highlight.directive';
+import { RainbowDirectiveDirective } from './rainbow-directive.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HighlightDirective } from './highlight.directive';
     TableComponent,
     LoginRegisterSwitchComponent,
     HighlightDirective,
+    RainbowDirectiveDirective,
   ],
   imports: [
     BrowserModule,

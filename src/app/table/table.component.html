@@ -1,5 +1,11 @@
 <div class="table-container">
     <div id="table-wrapper">
+        <div class="d-flex justify-content-between align-items-center p-3 bg-black pe-3 border-bottom ps-3">
+            <h4 class="m-0 text-light">User Table</h4>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="searchInput" placeholder="Search By Username" (keyup)="searchUser()" />
+            </div>
+        </div>
         <table id="user-table" class="table table-dark table-striped m-0">
             <thead>
                 <th>User Name</th>
@@ -8,44 +14,59 @@
                 <th>Actions</th>
             </thead>
             <tbody>
-                <tr *ngFor="let user of userData">
+                <tr *ngFor="let user of userData; let i = index">
                     <td>{{user.userName}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.name}}</td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                Launch static backdrop modal
-                              </button>
-                            <div id="edit-icon" class="me-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <fa-icon [icon]="icons.edit" class="fa-1x text-light icons"></fa-icon>
+                            <div id="edit-icon" class="me-4">
+                                <fa-icon [icon]="icons.edit" class="fa-1x text-light icons" (click)="openModal(user, i)">
+                                </fa-icon>
                             </div>
                             <div id="delete-icon">
-                                <fa-icon [icon]="icons.delete" class="fa-1x text-light icons"></fa-icon>
+                                <fa-icon [icon]="icons.delete" class="fa-1x text-light icons" (click)="deleteUser(i)"></fa-icon>
                             </div>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit data</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
+        <div class="bg-black p-3" *ngIf="this.userData.length === 0">
+            <p class="text-light m-0 text-center">No Users</p>
         </div>
     </div>
-</div>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':modalDisplay}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Data</h4>
+                    <button type="button" class="close btn btn-outline-danger" aria-label="Close"
+                        (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="user-data-form">
+                        <div class="mb-3">
+                            <label for="user-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="user-email" name="email"
+                                [(ngModel)]="modalData.email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="user-userName" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="user-userName" name="user-userName"
+                                [(ngModel)]="modalData.userName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="user-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="user-name" name="user-name"
+                                [(ngModel)]="modalData.name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" (click)="onCloseHandled()">Update</button>
+                </div>
+            </div>
+
+        </div>

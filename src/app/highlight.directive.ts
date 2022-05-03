@@ -13,7 +13,6 @@ export class HighlightDirective {
 
     @HostListener('keyup') changeStyleOnKeyUp() {
         this.changeStyle('10rem', '2rem');
-
     }
 
     changeStyle(width: string, height: string) {
