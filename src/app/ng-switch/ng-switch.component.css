@@ -1,0 +1,12 @@
+.switch-container {
+    height: 100vh;
+    background-image: linear-gradient(155deg, #673ab7, #4863fb);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    color: wheat;
+}

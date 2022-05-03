@@ -18,6 +18,7 @@ import { TableComponent } from './table/table.component';
 import { LoginRegisterSwitchComponent } from './login-register-switch/login-register-switch.component';
 import { HighlightDirective } from './highlight.directive';
 import { RainbowDirectiveDirective } from './rainbow-directive.directive';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RainbowDirectiveDirective } from './rainbow-directive.directive';
     LoginRegisterSwitchComponent,
     HighlightDirective,
     RainbowDirectiveDirective,
+    NgSwitchComponent,
   ],
   imports: [
     BrowserModule,
