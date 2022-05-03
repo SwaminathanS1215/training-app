@@ -19,6 +19,7 @@ import { LoginRegisterSwitchComponent } from './login-register-switch/login-regi
 import { HighlightDirective } from './highlight.directive';
 import { RainbowDirectiveDirective } from './rainbow-directive.directive';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { CustomStructuralDirectiveDirective } from './custom-structural-directive.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
     HighlightDirective,
     RainbowDirectiveDirective,
     NgSwitchComponent,
+    CustomStructuralDirectiveDirective,
   ],
   imports: [
     BrowserModule,

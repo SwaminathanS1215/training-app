@@ -19,7 +19,18 @@
             <p class="text-white">Changes Color, Border and Border Radius on Key Press</p>
             <textarea appRainbowDirective cols="100" rows="10" [ngStyle]="{'text-align': 'center'}"></textarea>
         </div> -->
-        <app-ng-switch></app-ng-switch>
+        <!-- <app-ng-switch></app-ng-switch> -->
+        <!-- Custom Structural Directive -->
+        <div class="bg-black h-100 p-5">
+            <h2 class="text-white">Custom Structural Directive</h2>
+            <p class="text-white">Will create five input fields by using looping in custom structural directive</p>
+            <div class="mt-5 w-25">
+                <div *appCustomStructuralDirective="5">
+                    <input type="text" class="form-control m-4 ms-0 mt-0" name="password" id="login-pwd"
+                        placeholder="Text Box" />
+                </div>
+            </div>
+        </div>
     </main>
 </div>
 
