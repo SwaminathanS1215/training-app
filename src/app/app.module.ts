@@ -16,6 +16,7 @@ import { NgStylesInputComponent } from './ng-styles-input/ng-styles-input.compon
 import { NgStylesDropdownComponent } from './ng-styles-dropdown/ng-styles-dropdown.component';
 import { TableComponent } from './table/table.component';
 import { LoginRegisterSwitchComponent } from './login-register-switch/login-register-switch.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LoginRegisterSwitchComponent } from './login-register-switch/login-regi
     NgStylesDropdownComponent,
     TableComponent,
     LoginRegisterSwitchComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

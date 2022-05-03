@@ -5,8 +5,13 @@
         <!-- <app-ng-class-images></app-ng-class-images> -->
         <!-- <app-ng-styles-input></app-ng-styles-input> -->
         <!-- <app-ng-styles-dropdown></app-ng-styles-dropdown> -->
-        <app-login-register-switch></app-login-register-switch>
+        <!-- <app-login-register-switch></app-login-register-switch> -->
         <!-- <app-table></app-table> -->
+        <div class="bg-black h-100 p-5">
+            <h2 class="text-white">Custom Attribute Directive</h2>
+            <p class="text-white">Increasing width and height on Key Down</p>
+            <input appHighlight  [ngStyle]="{'width':'10rem', 'height':'2rem'}"/>
+        </div>
     </main>
 </div>
 
