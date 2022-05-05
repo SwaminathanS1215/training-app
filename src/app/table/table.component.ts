@@ -1,3 +1,4 @@
+import { RESTService } from './../services/rest.service';
 import { Component, OnInit } from '@angular/core';
 
 import {
@@ -35,15 +36,7 @@ export class TableComponent implements OnInit {
     filterByLocation!: string;
     filterByDesignation!: string;
 
-    users: Array<userDetails> = [
-        { userName: 'WT1215', password: 'Swami7798', email: 'swami7798@gmail.com', name: 'Swaminathan', designation: 'Associate Software Engineer', location: 'Bengaluru' },
-        { userName: 'WT1216', password: 'Rahul7798', email: 'rahul7798@gmail.com', name: 'Rahul', designation: 'Associate Software Engineer', location: 'Bengaluru' },
-        { userName: 'WT1217', password: 'Prasanth7798', email: 'prasanth798@gmail.com', name: 'Prasanth', designation: 'Senior Software Engineer', location: 'Mumbai' },
-        { userName: 'WT1218', password: 'Mukesh7798', email: 'mukesh7798@gmail.com', name: 'Mukesh', designation: 'Senior Software Engineer', location: 'Mumbai' },
-        { userName: 'WT1219', password: 'Ravi7798', email: 'ravi7798@gmail.com', name: 'Ravi', designation: 'Technical Lead', location: 'Bengaluru' },
-        { userName: 'WT1220', password: 'Ramesh7798', email: 'ramesh7798@gmail.com', name: 'Ramesh', designation: 'Manager', location: 'Bengaluru' },
-        { userName: 'WT1221', password: 'Dinesh7798', email: 'dinesh7798@gmail.com', name: 'Dinesh', designation: 'Technical Lead', location: 'Mumbai' }
-    ]
+    users: Array<userDetails> = []
 
     // font awesome icons
     icons = {
@@ -51,19 +44,11 @@ export class TableComponent implements OnInit {
         delete: faTrash
     };
 
-    constructor() {
+    constructor(private restService: RESTService) {
         this.searchInput = '';
 
         // existing users
-        this.userData = [
-            { userName: 'WT1215', password: 'Swami7798', email: 'swami7798@gmail.com', name: 'Swaminathan', designation: 'Associate Software Engineer', location: 'Bengaluru' },
-            { userName: 'WT1216', password: 'Rahul7798', email: 'rahul7798@gmail.com', name: 'Rahul', designation: 'Associate Software Engineer', location: 'Bengaluru' },
-            { userName: 'WT1217', password: 'Prasanth7798', email: 'prasanth798@gmail.com', name: 'Prasanth', designation: 'Senior Software Engineer', location: 'Mumbai' },
-            { userName: 'WT1218', password: 'Mukesh7798', email: 'mukesh7798@gmail.com', name: 'Mukesh', designation: 'Senior Software Engineer', location: 'Mumbai' },
-            { userName: 'WT1219', password: 'Ravi7798', email: 'ravi7798@gmail.com', name: 'Ravi', designation: 'Technical Lead', location: 'Bengaluru' },
-            { userName: 'WT1220', password: 'Ramesh7798', email: 'ramesh7798@gmail.com', name: 'Ramesh', designation: 'Manager', location: 'Bengaluru' },
-            { userName: 'WT1221', password: 'Dinesh7798', email: 'dinesh7798@gmail.com', name: 'Dinesh', designation: 'Technical Lead', location: 'Mumbai' }
-        ]
+        this.userData = []
 
         this.modalData = {
             email: '',
@@ -76,6 +61,15 @@ export class TableComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.restService.getAllUsers().subscribe({
+            next: (data: userDetails[]) => {
+                this.userData = data;
+                this.users = data;
+            },
+            error: (err) => {
+                alert(err);
+            }
+        })
     }
 
     resetModalData() {

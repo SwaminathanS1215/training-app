@@ -24,6 +24,7 @@ import { StringUpperCasePipe } from './pipes/string-upper-case.pipe';
 import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { TablePipe } from './pipes/table.pipe';
 import { ProductsComponent } from './products/products.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ProductsComponent } from './products/products.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule 
+    FontAwesomeModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
