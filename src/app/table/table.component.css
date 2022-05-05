@@ -1,6 +1,6 @@
 .table-container {
     height: 100vh;
-    background-image: linear-gradient(155deg, #673ab7 50%, #4863fb 50%);
+    background-image: linear-gradient(155.4deg, #1d0903 50%, #c2ecff 50%);
     display: flex;
 }
 
@@ -15,6 +15,10 @@
 
 thead {
     background: black;
+}
+
+th {
+    color: white;
 }
 
 th, td {

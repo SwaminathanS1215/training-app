@@ -103,15 +103,4 @@ export class TableComponent implements OnInit {
         this.users.splice(index, 1);
     }
 
-    searchUser() {
-        if (this.searchInput) {
-            // filter for usernames startswith the entered input
-            this.userData = this.users.filter(user => {
-                return user.userName.startsWith(this.searchInput.toLowerCase());
-            });
-        } else {
-            this.userData = this.users;
-        }
-    }
-
 }

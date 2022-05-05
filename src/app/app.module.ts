@@ -20,6 +20,8 @@ import { HighlightDirective } from './highlight.directive';
 import { RainbowDirectiveDirective } from './rainbow-directive.directive';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { CustomStructuralDirectiveDirective } from './custom-structural-directive.directive';
+import { StringUpperCasePipe } from './pipes/string-upper-case.pipe';
+import { TableFilterPipe } from './pipes/table-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { CustomStructuralDirectiveDirective } from './custom-structural-directiv
     HighlightDirective,
     RainbowDirectiveDirective,
     NgSwitchComponent,
-    CustomStructuralDirectiveDirective
+    CustomStructuralDirectiveDirective,
+    StringUpperCasePipe,
+    TableFilterPipe
   ],
   imports: [
     BrowserModule,
