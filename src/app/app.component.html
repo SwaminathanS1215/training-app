@@ -1,5 +1,5 @@
 <div>
-    <main>
+    <main class="main">
         <!-- <app-ng-class></app-ng-class> -->
         <!-- <app-register-validation></app-register-validation> -->
         <!-- <app-ng-class-images></app-ng-class-images> -->
@@ -21,13 +21,58 @@
         </div> -->
         <!-- <app-ng-switch></app-ng-switch> -->
         <!-- Custom Structural Directive -->
-        <div class="bg-black h-100 p-5">
+        <!-- <div class="bg-black h-100 p-5">
             <h2 class="text-white">Custom Structural Directive</h2>
             <p class="text-white">Will create five input fields by using looping in custom structural directive</p>
             <div class="mt-5 w-25">
                 <div *appCustomStructuralDirective="5">
                     <input type="text" class="form-control m-4 ms-0 mt-0" name="password" id="login-pwd"
                         placeholder="Text Box" />
+                </div>
+            </div>
+        </div> -->
+        <!-- In built Pipes -->
+        <div class=" h-100 p-3">
+            <h2 class="text-center">In Built Pipes</h2>
+            <div class="row" id="pipe-wrapper">
+                <div class="col-md-3">
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Currency Pipe</h4>
+                        <p><span>{{currencyData}} INR</span></p>
+                    </div>
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Date Pipe</h4>
+                        <p><span>{{regularDate}}</span></p>
+                    </div>
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Short Date</h4>
+                        <p><span>{{shortDate}}</span></p>
+                    </div>
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Slice Pipe</h4>
+                        <p><span>{{strSlice}}</span></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img id="pipe-image" src="../assets/images/ng-pipe.png"/>
+                </div>
+                <div class="col-md-3">
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Currency Pipe</h4>
+                        <p><span>{{currencyData | currency : 'INR'}}</span></p>
+                    </div>
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Date Pipe</h4>
+                        <p><span>{{regularDate | date}}</span></p>
+                    </div>
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Short Date</h4>
+                        <p><span>{{regularDate | date : 'short'}}</span></p>
+                    </div>
+                    <div class="border border-dark p-3 pb-0">
+                        <h4 class="pipe-header">Slice Pipe</h4>
+                        <p><span>{{strSlice | slice : 2}}</span></p>
+                    </div>
                 </div>
             </div>
         </div>

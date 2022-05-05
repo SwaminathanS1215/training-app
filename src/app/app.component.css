@@ -1,4 +1,8 @@
-#parent-div {
-    background-color: #3f51b5;
+.main {
+    height: 100vh;
+    background-color: #f0ebed;
 }
 
+#pipe-image {
+    width: 100%;
+}

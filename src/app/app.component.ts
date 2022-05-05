@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'training-app';
 
+  currencyData: number = 10000;
+  regularDate: Date = new Date();
+  shortDate: Date = new Date();
+  strSlice: string = 'Angular Slice';
+
   constructor() {
   }
 }

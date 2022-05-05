@@ -38,7 +38,7 @@ import { CustomStructuralDirectiveDirective } from './custom-structural-directiv
     HighlightDirective,
     RainbowDirectiveDirective,
     NgSwitchComponent,
-    CustomStructuralDirectiveDirective,
+    CustomStructuralDirectiveDirective
   ],
   imports: [
     BrowserModule,
