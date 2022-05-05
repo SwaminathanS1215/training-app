@@ -10,6 +10,8 @@ export interface userDetails {
     password: string;
     email: string;
     name: string;
+    designation: string;
+    location: string;
 }
 
 @Component({
@@ -26,18 +28,21 @@ export class TableComponent implements OnInit {
     modalDisplay = "none";
     modalData: userDetails;
     updateIndex = 0;
+    filterByOptions: string = '';
 
     // searchData
     searchInput: string;
+    filterByLocation!: string;
+    filterByDesignation!: string;
 
     users: Array<userDetails> = [
-        { userName: 'swaminathan', password: 'Swami7798', email: 'swami7798@gmail.com', name: 'Swaminathan' },
-        { userName: 'rahul', password: 'Rahul7798', email: 'rahul7798@gmail.com', name: 'Rahul' },
-        { userName: 'prasanth', password: 'Prasanth7798', email: 'prasanth798@gmail.com', name: 'Prasanth' },
-        { userName: 'mukesh', password: 'Mukesh7798', email: 'mukesh7798@gmail.com', name: 'Mukesh' },
-        { userName: 'ravi', password: 'Ravi7798', email: 'ravi7798@gmail.com', name: 'Ravi' },
-        { userName: 'ramesh', password: 'Ramesh7798', email: 'ramesh7798@gmail.com', name: 'Ramesh' },
-        { userName: 'dinesh', password: 'Dinesh7798', email: 'dinesh7798@gmail.com', name: 'Dinesh' }
+        { userName: 'WT1215', password: 'Swami7798', email: 'swami7798@gmail.com', name: 'Swaminathan', designation: 'Associate Software Engineer', location: 'Bengaluru' },
+        { userName: 'WT1216', password: 'Rahul7798', email: 'rahul7798@gmail.com', name: 'Rahul', designation: 'Associate Software Engineer', location: 'Bengaluru' },
+        { userName: 'WT1217', password: 'Prasanth7798', email: 'prasanth798@gmail.com', name: 'Prasanth', designation: 'Senior Software Engineer', location: 'Mumbai' },
+        { userName: 'WT1218', password: 'Mukesh7798', email: 'mukesh7798@gmail.com', name: 'Mukesh', designation: 'Senior Software Engineer', location: 'Mumbai' },
+        { userName: 'WT1219', password: 'Ravi7798', email: 'ravi7798@gmail.com', name: 'Ravi', designation: 'Technical Lead', location: 'Bengaluru' },
+        { userName: 'WT1220', password: 'Ramesh7798', email: 'ramesh7798@gmail.com', name: 'Ramesh', designation: 'Manager', location: 'Bengaluru' },
+        { userName: 'WT1221', password: 'Dinesh7798', email: 'dinesh7798@gmail.com', name: 'Dinesh', designation: 'Technical Lead', location: 'Mumbai' }
     ]
 
     // font awesome icons
@@ -51,20 +56,22 @@ export class TableComponent implements OnInit {
 
         // existing users
         this.userData = [
-            { userName: 'swaminathan', password: 'Swami7798', email: 'swami7798@gmail.com', name: 'Swaminathan' },
-            { userName: 'rahul', password: 'Rahul7798', email: 'rahul7798@gmail.com', name: 'Rahul' },
-            { userName: 'prasanth', password: 'Prasanth7798', email: 'prasanth798@gmail.com', name: 'Prasanth' },
-            { userName: 'mukesh', password: 'Mukesh7798', email: 'mukesh7798@gmail.com', name: 'Mukesh' },
-            { userName: 'ravi', password: 'Ravi7798', email: 'ravi7798@gmail.com', name: 'Ravi' },
-            { userName: 'ramesh', password: 'Ramesh7798', email: 'ramesh7798@gmail.com', name: 'Ramesh' },
-            { userName: 'dinesh', password: 'Dinesh7798', email: 'dinesh7798@gmail.com', name: 'Dinesh' }
+            { userName: 'WT1215', password: 'Swami7798', email: 'swami7798@gmail.com', name: 'Swaminathan', designation: 'Associate Software Engineer', location: 'Bengaluru' },
+            { userName: 'WT1216', password: 'Rahul7798', email: 'rahul7798@gmail.com', name: 'Rahul', designation: 'Associate Software Engineer', location: 'Bengaluru' },
+            { userName: 'WT1217', password: 'Prasanth7798', email: 'prasanth798@gmail.com', name: 'Prasanth', designation: 'Senior Software Engineer', location: 'Mumbai' },
+            { userName: 'WT1218', password: 'Mukesh7798', email: 'mukesh7798@gmail.com', name: 'Mukesh', designation: 'Senior Software Engineer', location: 'Mumbai' },
+            { userName: 'WT1219', password: 'Ravi7798', email: 'ravi7798@gmail.com', name: 'Ravi', designation: 'Technical Lead', location: 'Bengaluru' },
+            { userName: 'WT1220', password: 'Ramesh7798', email: 'ramesh7798@gmail.com', name: 'Ramesh', designation: 'Manager', location: 'Bengaluru' },
+            { userName: 'WT1221', password: 'Dinesh7798', email: 'dinesh7798@gmail.com', name: 'Dinesh', designation: 'Technical Lead', location: 'Mumbai' }
         ]
 
         this.modalData = {
             email: '',
             name: '',
             userName: '',
-            password: ''
+            password: '',
+            designation: '',
+            location: ''
         }
     }
 
@@ -76,7 +83,9 @@ export class TableComponent implements OnInit {
             email: '',
             name: '',
             userName: '',
-            password: ''
+            password: '',
+            designation: '',
+            location: ''
         }
     }
 
@@ -89,6 +98,8 @@ export class TableComponent implements OnInit {
         this.modalData.password = user.password;
         this.modalData.email = user.email;
         this.modalData.name = user.name;
+        this.modalData.designation = user.designation;
+        this.modalData.location = user.location
     }
 
     onCloseHandled() {

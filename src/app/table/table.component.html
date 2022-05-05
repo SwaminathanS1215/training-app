@@ -1,23 +1,39 @@
 <div class="table-container">
     <div id="table-wrapper">
         <div class="d-flex justify-content-between align-items-center p-3 bg-black pe-3 border-bottom ps-3">
-            <h4 class="m-0 text-light">User Table</h4>
-            <div>
-                <input type="text" class="form-control" [(ngModel)]="searchInput" placeholder="Search By Username"/>
+            <div class="d-flex align-items-center w-100">
+                <select class="form-select form-select-sm me-4 w-auto" aria-label=".form-select-sm example"
+                    [(ngModel)]="filterByOptions" name="border">
+                    <option value="">Filter by none</option>
+                    <option value="userName">Username</option>
+                    <option value="location">Location</option>
+                    <option value="designation">Designation</option>
+                    <option value="email">Email</option>
+                    <option value="location&Designation">Location and Designation</option>
+                </select>
+                <div *ngIf="filterByOptions !== 'location&Designation'; else locationDesignation">
+                    <input type="text" class="form-control form-select-sm" [(ngModel)]="searchInput" placeholder="Search By {{filterByOptions}}"/>
+                </div>
+                <ng-template #locationDesignation>
+                    <input type="text" class="form-control form-select-sm me-4 w-auto" [(ngModel)]="filterByLocation" placeholder="Search By Location"/>
+                    <input type="text" class="form-control form-select-sm w-auto" [(ngModel)]="filterByDesignation" placeholder="Search By Designation"/>
+                </ng-template>
             </div>
         </div>
         <table id="user-table" class="table table-info table-striped m-0">
             <thead>
                 <th>User Name</th>
                 <th>Email</th>
-                <th>Name</th>
+                <th>Designation</th>
+                <th>Location</th>
                 <th>Actions</th>
             </thead>
             <tbody>
-                <tr *ngFor="let user of userData | tableFilter : searchInput; let i = index">
+                <tr *ngFor="let user of userData | tableFilter : filterByOptions : searchInput : filterByLocation : filterByDesignation; let i = index">
                     <td>{{user.userName}}</td>
                     <td>{{user.email}}</td>
-                    <td>{{user.name}}</td>
+                    <td>{{user.designation}}</td>
+                    <td>{{user.location}}</td>
                     <td>
                         <div class="d-flex align-items-center">
                             <div id="edit-icon" class="me-4">
@@ -58,9 +74,14 @@
                                 [(ngModel)]="modalData.userName">
                         </div>
                         <div class="mb-3">
-                            <label for="user-name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="user-name" name="user-name"
-                                [(ngModel)]="modalData.name">
+                            <label for="user-designation" class="form-label">Designation</label>
+                            <input type="text" class="form-control" id="user-designation" name="user-designation"
+                                [(ngModel)]="modalData.designation">
+                        </div>
+                        <div class="mb-3">
+                            <label for="user-location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="user-location" name="user-location"
+                                [(ngModel)]="modalData.location">
                         </div>
                     </form>
                 </div>

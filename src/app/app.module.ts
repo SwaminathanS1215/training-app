@@ -22,6 +22,7 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { CustomStructuralDirectiveDirective } from './custom-structural-directive.directive';
 import { StringUpperCasePipe } from './pipes/string-upper-case.pipe';
 import { TableFilterPipe } from './pipes/table-filter.pipe';
+import { TablePipe } from './pipes/table.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TableFilterPipe } from './pipes/table-filter.pipe';
     NgSwitchComponent,
     CustomStructuralDirectiveDirective,
     StringUpperCasePipe,
-    TableFilterPipe
+    TableFilterPipe,
+    TablePipe
   ],
   imports: [
     BrowserModule,

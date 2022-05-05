@@ -1,12 +1,12 @@
 .main {
     height: 100vh;
-    background-color: #f0ebed;
+    background-image: linear-gradient(45deg, #2196f3, #9c27b0);
 }
 
-#pipe-image {
-    width: 100%;
-}
-
-.pipe-header {
-    color: brown;
+h1.timer {
+    background: linear-gradient(to left, #eae0dd 0%, #fa78a4 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
