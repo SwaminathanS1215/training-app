@@ -23,6 +23,7 @@ import { CustomStructuralDirectiveDirective } from './custom-structural-directiv
 import { StringUpperCasePipe } from './pipes/string-upper-case.pipe';
 import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { TablePipe } from './pipes/table.pipe';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TablePipe } from './pipes/table.pipe';
     CustomStructuralDirectiveDirective,
     StringUpperCasePipe,
     TableFilterPipe,
-    TablePipe
+    TablePipe,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
