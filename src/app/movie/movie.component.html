@@ -1,0 +1,57 @@
+<div class="movie-container">
+    <div class="filter-wrapper p-2 pt-0 pb-0">
+        <div id="filter-tab" class="w-100 d-flex align-items-center ps-2 pe-2">
+            <div class="filter-item d-flex align-items-center w-100">
+                <select class="form-select form-select-sm me-1 w-auto" aria-label=".form-select-sm example"
+                    [(ngModel)]="filterOptions" name="flex-direction">
+                    <option value="">Filter By none</option>
+                    <option value="genre">Genre</option>
+                    <option value="year">Year Released</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <div *ngIf="filterOptions !== 'rating' && filterOptions !== ''">
+                    <input type="text" class="form-control-sm form-control" placeholder="Search By {{filterOptions}}" />
+                </div>
+                <div *ngIf="filterOptions === 'rating'">
+                    <select class="form-select form-select-sm me-1" aria-label=".form-select-sm example"
+                        [(ngModel)]="filterOptions" name="flex-direction">
+                        <option value="">Filter By none</option>
+                        <option value="genre">Genre</option>
+                        <option value="year">Year Released</option>
+                        <option value="rating">Rating</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-wrapper row w-100 m-0">
+        <div class="movie-item col-md-4 p-2" *ngFor="let movie of movieData">
+            <div class="card movie-card row g-0 h-100">
+                <div class="col-md-4">
+                    <img class="card-img" src={{movie.image}} alt={{movie.name}} />
+                </div>
+                <div class="col-md-8 card-body pt-0">
+                    <h6 class="h6-card-title">{{movie.name}}</h6>
+                    <p class="p-movie-year">{{movie.year}} / {{movie.genre}}</p>
+                    <div class="d-flex flex-wrap mb-2">
+                        <p class="badge bg-light me-1 mb-1 p-cast text-dark" *ngFor="let person of movie.cast">
+                            {{person}}
+                        </p>
+                    </div>
+                    <p class="p-movie-director text-white">
+                        <span class="fw-bold">Directed by : </span>
+                        <span>{{movie.director}}</span>
+                    </p>
+                    <p class="p-movie-producer text-white">
+                        <span class="fw-bold">Produced by : </span>
+                        <span>{{movie.producer}}</span>
+                    </p>
+                    <p class="text-success p-movie-rating">
+                        <span>{{movie.rating}}</span>&nbsp;
+                        <fa-icon [icon]="icons.star" class="text-success icons"></fa-icon>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

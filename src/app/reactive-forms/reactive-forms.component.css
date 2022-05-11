@@ -1,0 +1,14 @@
+.reactive-forms-container {
+    padding: 1rem;
+    background: url(../../assets/images/react-forms-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    width: 20rem;
+}
+
+label {
+    color: white;
+}

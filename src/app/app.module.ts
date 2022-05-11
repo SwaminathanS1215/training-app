@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,10 @@ import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { TablePipe } from './pipes/table.pipe';
 import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MovieComponent } from './movie/movie.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { MoviePipe } from './pipes/movie.pipe';
+import { RoutingComponent } from './routing/routing.component';
 
 @NgModule({
   declarations: [
@@ -47,14 +51,19 @@ import { HttpClientModule } from '@angular/common/http';
     StringUpperCasePipe,
     TableFilterPipe,
     TablePipe,
-    ProductsComponent
+    ProductsComponent,
+    MovieComponent,
+    ReactiveFormsComponent,
+    MoviePipe,
+    RoutingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule ,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

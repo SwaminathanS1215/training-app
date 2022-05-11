@@ -1,0 +1,22 @@
+<div class="reactive-forms-container h-100">
+    <h3 class="text-light">Login Form</h3>
+    <form [formGroup]="userForm">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name" id="name" name="name">
+            <div *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+                <p class="text-danger" *ngIf="name?.errors?.['required']">Please enter name</p>
+                <p class="text-danger" *ngIf="name?.errors?.['minlength']">Name should be atleast 5 characters</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" id="password" name="password">
+            <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+                <p class="text-danger" *ngIf="password?.errors?.['required']">Please enter password</p>
+                <p class="text-danger" *ngIf="password?.errors?.['invalidPassword']">Password should not contain 'password'</p>
+            </div>
+        </div>
+        <button class="btn btn-success">Login</button>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+.movie-container {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(45deg, #d6d6d6, white);
+    padding: 1rem;
+}
+
+.movie-card {
+    flex-direction: row;
+    padding: 0.3rem;
+    border: 0;
+    background-image: linear-gradient(45deg, #000000, #150d22);
+}
+
+.card-img {
+    height: 100%;
+}
+
+.h6-card-title {
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    color: #15ddf7;
+    font-weight: bold;
+}
+
+.p-movie-year {
+    color: gray;
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+}
+
+.p-movie-director, .p-movie-producer {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+}
+
+.p-cast {
+    font-size: 0.7rem;
+}
+
+.p-movie-rating {
+    font-size: 0.8rem;
+    color: #33cd3a;
+    font-weight: bold;
+}
+
+#filter-tab {
+    background-image: linear-gradient(45deg, #000000, #150d22);
+    width: 100%;
+    height: 4rem;
+}

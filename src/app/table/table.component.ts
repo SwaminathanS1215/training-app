@@ -5,6 +5,7 @@ import {
     faPen,
     faTrash
 } from '@fortawesome/free-solid-svg-icons'
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface userDetails {
     userName: string;
@@ -30,6 +31,7 @@ export class TableComponent implements OnInit {
     modalData: userDetails;
     updateIndex = 0;
     filterByOptions: string = '';
+    employeeUserName: any = '';
 
     // searchData
     searchInput: string;
@@ -44,7 +46,7 @@ export class TableComponent implements OnInit {
         delete: faTrash
     };
 
-    constructor(private restService: RESTService) {
+    constructor(private router: Router, private restService: RESTService, private activatedRoute: ActivatedRoute) {
         this.searchInput = '';
 
         // existing users
@@ -65,10 +67,21 @@ export class TableComponent implements OnInit {
             next: (data: userDetails[]) => {
                 this.userData = data;
                 this.users = data;
+                this.filterProductsById();
             },
             error: (err) => {
                 alert(err);
             }
+        })
+        
+        this.activatedRoute.paramMap.subscribe(param => {
+            this.employeeUserName = param.get('userName');
+        })
+    }
+
+    filterProductsById() {
+        this.userData = this.userData.filter(user => {
+            return user.userName === this.employeeUserName;
         })
     }
 

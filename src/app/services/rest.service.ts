@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class RESTService {
-    URL = 'http://localhost:8000/users';
+    URL = 'http://localhost:3001/users';
 
     constructor(private http: HttpClient) { }
 
